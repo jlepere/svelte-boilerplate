@@ -1,0 +1,28 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": ["eslint:recommended", "prettier"],
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module"
+  },
+  "plugins": ["import", "svelte3"],
+  "overrides": [
+    {
+      "files": ["*.svelte"],
+      "processor": "svelte3/svelte3"
+    }
+  ],
+  "rules": {
+    "arrow-body-style": ["error", "as-needed"],
+    "func-style": ["error", "expression"],
+    "import/newline-after-import": "error",
+    "max-len": ["error", { "code": 100 }],
+    "no-console": "error",
+    "prefer-arrow-callback": "error",
+    "prefer-template": "error"
+  }
+}

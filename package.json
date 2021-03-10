@@ -1,0 +1,59 @@
+{
+  "private": true,
+  "name": "svelte-boilerplate",
+  "version": "1.0.0",
+  "description": "A personal svelte boilerplate",
+  "author": "Jason Lepère <me@jlepere.fr>",
+  "scripts": {
+    "cm": "git-cz",
+    "release": "standard-version",
+    "prepare": "husky install",
+    "format": "prettier --write src/**/*.{js,svelte}",
+    "lint": "eslint src/**/*.{js,svelte} --fix",
+    "build": "rollup -c",
+    "watch": "rollup -c -w",
+    "start": "sirv public"
+  },
+  "dependencies": {
+    "sirv-cli": "^1.0.11"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.0.1",
+    "@commitlint/config-conventional": "^12.0.1",
+    "@rollup/plugin-commonjs": "^17.1.0",
+    "@rollup/plugin-node-resolve": "^11.2.0",
+    "commitizen": "^4.2.3",
+    "eslint": "^7.21.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-svelte3": "^3.1.2",
+    "husky": "^5.1.3",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1",
+    "prettier-plugin-svelte": "^2.2.0",
+    "rollup": "^2.41.0",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-svelte": "^7.1.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "standard-version": "^9.1.1",
+    "svelte": "^3.35.0",
+    "svelte-navigator": "^3.1.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "src/**/*.{js,svelte}": [
+      "npm run format",
+      "npm run lint"
+    ]
+  }
+}
