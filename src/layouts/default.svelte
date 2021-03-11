@@ -1,5 +1,11 @@
+<script>
+  import { Router } from 'svelte-navigator';
+</script>
+
 <main>
-  <slot />
+  <Router>
+    <slot />
+  </Router>
 </main>
 
 <style>
